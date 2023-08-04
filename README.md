@@ -5,11 +5,7 @@ Satellite trackers such as Orbitron, Maiden Voyage Deep Space Tracker, and ARMCS
 
 In computing, DDE or Dynamic Data Exchange is an inter-process communication technology used in early Microsoft Windows and OS/2 versions. However, it is still used by many Amateur radio satellite tracking systems like Orbitron. DDE allows programs to manipulate objects provided by other programs and to respond to user actions that affect those objects.
 
-MyDDE2TCP
-
 MyDDENet consists of 2 applications. The first application is MyDDE2TCP. This application receives commands from a satellite tracker via DDE using the MyDDE protocol. It makes these command strings available on a TCP/IP server. This server allows several simultaneous connections.
-
-TCP2MyDDE
 
 The second application TCP2MyDDE is a TCP/IP client running on another machine in the ground station's network to receive the commands and make them available again using the MyDDE protocol on a DDE channel to MyDDE compatible devices such as radio and rotor equipment such as e.g., HDSDR, Orbitron2WebSDR, GNU-Radio, alfa spid rotor, HamLib-Rotor&Radio-Control...
 
