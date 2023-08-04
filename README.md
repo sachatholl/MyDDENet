@@ -9,6 +9,4 @@ MyDDENet consists of 2 applications. The first application is MyDDE2TCP. This ap
 
 The second application TCP2MyDDE is a TCP/IP client running on another machine in the ground station's network to receive the commands and make them available again using the MyDDE protocol on a DDE channel to MyDDE compatible devices such as radio and rotor equipment such as e.g., HDSDR, Orbitron2WebSDR, GNU-Radio, alfa spid rotor, HamLib-Rotor&Radio-Control...
 
-Since MyDDE2TCP accepts multiple client connections, Radio, Rotor, and WebSDR... can run on bare metal or virtual machines.
-
-Also, TCP2MyDDE allows multiple myDDE-compatible connections on the same bare metal machine or VM.
+Since the MyDDE2TCP server accepts multiple client connections, Radio, Rotor, and WebSDR... can run on bare metal or virtual machines. Also, the TCP2MyDDE client allows multiple myDDE-compatible connections on the same bare metal machine or VM.
