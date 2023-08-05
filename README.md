@@ -1,15 +1,19 @@
-# MyDDE-Net
-MyDDE-Net is a set of utilities to transport the MyDDE protocol used by Orbitron Satellite Tracker, Maiden Voyage Deep Space Tracker, and ARMCS over the network to allow control of radio equipment, Rotor, HamLib devices, and Orbitron2WebSDR typically used for amateur radio satellite ground stations.
+# MyDDE-Net Overview
+MyDDE-Net is a toolkit designed to enable the transmission of the MyDDE protocol over a network. It's primarily used to control antenna rotors and radio equipment in amateur radio satellite ground stations, with applications such as Orbitron, WX-Tracker, Maiden Voyage Deep Space Tracker, and ARMCS (Amateur Radio Mission Control System).
 
-Satellite trackers such as Orbitron, Maiden Voyage Deep Space Tracker, and ARMCS (Amateur Radio Mission Control System) use a driver protocol called MyDDE to transmit the receive/transmit frequencies and local horizon coordinates for antenna pointing via DDE.
+The MyDDE protocol consists of formatted string commands containing data such as propagation time, uplink and downlink frequencies, and local horizon coordinates for antenna pointing, all transported over a DDE channel.
 
-In computing, DDE or Dynamic Data Exchange is an inter-process communication technology used in early Microsoft Windows and OS/2 versions. However, it is still used by many Amateur radio satellite tracking systems like Orbitron. DDE allows programs to manipulate objects provided by other programs and to respond to user actions that affect those objects.
+# DDE and MyDDE protocol
+DDE (Dynamic Data Exchange) is an inter-process communication technology that originated in early Microsoft Windows and OS/2 versions. It allows programs to manipulate other program objects and respond to user actions that affect those objects. Many amateur radio satellite tracking systems still use it today.
 
-	**bold text** MyDDE2TCP 	**bold text**
-MyDDE-Net consists of 2 applications. The first application is MyDDE2TCP. This application receives commands from a satellite tracker via DDE using the MyDDE protocol. It makes these command strings available by launching a TCP/IP server. This server accepts several simultaneous TCP2MyDDE client connections.
+# Application components
+MyDDE-Net consists of two applications, MyDDE2TCP and TCP2MyDDE, written entirely in LabVIEW.
 
-The second application TCP2MyDDE is a TCP/IP client running essentially on another machine in the ground station's network to receive the commands and make them available again using the MyDDE protocol on a DDE channel to MyDDE compatible devices such as radio and rotor equipment such as HDSDR, Orbitron2WebSDR, GNU-Radio, Slfa-Spid rotor, HamLib-Rotor&Radio-Control...
+## MyDDE2TCP
+This application receives commands from a satellite tracker using the MyDDE protocol via DDE, then makes these commands available on a TCP/IP server, allowing multiple simultaneous connections.
 
-In a nutshell, MyDDE2TCP repeats the MyDDE protocol from one IP to one or several TCP2MyDDE clients, which are located at another IP using the same TCP port. Since the MyDDE2TCP server accepts multiple client connections, the endpoint devices, such as  Radios, Rotors, and WebSDRs... can run on different bare metal or virtual machines. Also, the TCP2MyDDE client allows multiple myDDE-compatible connections on the same bare metal machine or VM.
+## TCP2MyDDE
+TCP2MyDDE works as a TCP/IP client on another machine within the ground station's network. It receives commands and sends them back on a DDE channel using the MyDDE protocol to control the radios and rotor equipment of the ground station. The MyDDE2TCP server and TCP2MyDDE client support multiple client connections, allowing endpoints to run on bare metal or virtual machines.
 
-MyDDE2TCP and TCP2MyDDE are completely written in LabVIEW. I provided the sources in LV2013, so they can be opened at least in every LV version until the time of release (04.08.2023). I provided executables for LabVIEW Runtime Engine 2013, to be used in Windows7 - 10, and LabVIEW Runtime Engine 2021 for Windows >= 10
+# Code and executables
+Sources for both applications are provided in LV2013 format and can be opened in any LV version until release (04/08/2023). Executables are available for LabVIEW 32bit Runtime Engine 2013 SP1 (compatible with Windows Vista, XP, Windows 7, and Windows 8) and LabVIEW 32bit Runtime Engine 2021 for Windows 10.
