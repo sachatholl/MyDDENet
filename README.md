@@ -13,5 +13,5 @@ This application receives commands from a satellite tracker using the MyDDE prot
 ## TCP2MyDDE
 TCP2MyDDE works as a TCP/IP client on another machine within the ground station's network. It receives commands and sends them back on a DDE channel using the MyDDE protocol to control the radios and rotor equipment of the ground station. The MyDDE2TCP server and TCP2MyDDE client support multiple client connections, allowing endpoints to run on bare metal or virtual machines.
 
-# Code and executables
+# Code and Executables
 Sources for both applications are provided in LV2013 format and can be opened in any LV version until release (04/08/2023). Executables are available for LabVIEW 32bit Runtime Engine 2013 SP1 (compatible with Windows Vista, XP, Windows 7, and Windows 8; Link to the Runtime Engine 2013: https://www.ni.com/de/support/downloads/software-products/download.labview-runtime.html#306238 ) and LabVIEW 32bit Runtime Engine 2021 for Windows 10 (Link to the Runtime Engine 2021: https://www.ni.com/de/support/downloads/software-products/download.labview-runtime.html#443250 ).
