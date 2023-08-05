@@ -1,10 +1,8 @@
 # MyDDE-Net Overview
 MyDDE-Net is a toolkit designed to enable the transmission of the MyDDE protocol over a network. It's primarily used to control antenna rotors and radio equipment in amateur radio satellite ground stations, with applications such as Orbitron, WX-Tracker, Maiden Voyage Deep Space Tracker, and ARMCS (Amateur Radio Mission Control System).
 
-The MyDDE protocol consists of formatted string commands containing data such as propagation time, uplink and downlink frequencies, and local horizon coordinates for antenna pointing, all transported over a DDE channel.
-
 # DDE and MyDDE protocol
-DDE (Dynamic Data Exchange) is an inter-process communication technology that originated in early Microsoft Windows and OS/2 versions. It allows programs to manipulate other program objects and respond to user actions that affect those objects. Many amateur radio satellite tracking systems still use it today.
+DDE (Dynamic Data Exchange) is an inter-process communication technology that originated in early Microsoft Windows and OS/2 versions. It allows programs to manipulate other program objects and respond to user actions that affect those objects. Many amateur radio satellite tracking systems still use it today. The MyDDE protocol consists of formatted string commands containing data such as propagation time, uplink and downlink frequencies, and local horizon coordinates for antenna pointing, all transported over a DDE channel.
 
 # Application components
 MyDDE-Net consists of two applications, MyDDE2TCP and TCP2MyDDE, written entirely in LabVIEW.
